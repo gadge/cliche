@@ -6,6 +6,8 @@ export class Ratio {
       { style: 'percent', minimumFractionDigits: digit })
   }
 
+  static build (digit) { return new Ratio(digit) }
+
   parse (any) { return isNumeric(any) ? this.fm.format(any) : String(any) }
 
   format (num) { return this.fm.format(num) }

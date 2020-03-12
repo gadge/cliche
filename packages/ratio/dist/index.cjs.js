@@ -2,9 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var util = require('@spare/util');
+var numStrict = require('@typen/num-strict');
 
-class ClicheRatio {
+class Ratio {
   constructor(digit = 0) {
     this.fm = new Intl.NumberFormat(undefined, {
       style: 'percent',
@@ -12,8 +12,12 @@ class ClicheRatio {
     });
   }
 
-  form(any) {
-    return util.isNumeric(any) ? this.fm.format(any) : String(any);
+  static build(digit) {
+    return new Ratio(digit);
+  }
+
+  parse(any) {
+    return numStrict.isNumeric(any) ? this.fm.format(any) : String(any);
   }
 
   format(num) {
@@ -22,4 +26,4 @@ class ClicheRatio {
 
 }
 
-exports.ClicheRatio = ClicheRatio;
+exports.Ratio = Ratio;

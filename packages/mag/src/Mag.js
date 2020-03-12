@@ -7,6 +7,8 @@ export class Mag {
       `\\d(?=(\\d{${sep || 3}})+${digit > 0 ? '\\.' : '$'})`, 'g')
   }
 
+  static build (digit, sep) { return new Mag(digit, sep) }
+
   parse (any) { return isNumeric(any) ? this.format(any) : String(any) }
 
   format (num) { return num.toFixed(this.dg).replace(this.reg, '$&,') }

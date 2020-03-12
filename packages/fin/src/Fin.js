@@ -7,6 +7,8 @@ export class Fin {
     this.fm = new Intl.NumberFormat(locale, options)
   }
 
+  static build (region) { return new Fin(region) }
+
   parse (any) { return isNumeric(any) ? this.fm.format(any) : String(any) }
 
   format (num) { return this.fm.format(num) }
