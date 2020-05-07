@@ -15,7 +15,7 @@
     "test": "node -r @babel/register test/cliche-fin.test.js"
   },
   "dependencies": {
-    "@typen/num-strict": "0.0.2"
+    "@typen/num-strict": "0.1.0"
   },
   "repository": {
     "type": "git",
